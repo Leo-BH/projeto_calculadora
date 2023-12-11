@@ -1,10 +1,11 @@
-def calcular_idade():
-    while True:
+executar = True
+while True:
 
-        # Função que captura a data atual.
-        from datetime import date
-        data_atual = (date.today().year)
+    # Função que captura a data atual.
+    from datetime import date
+    data_atual = (date.today().year)
 
+    try:
         # Recebe os dados do usuário.
         nome = str(input("Qual o seu nome completo? "))
         ano_nasc = int(
@@ -18,7 +19,7 @@ def calcular_idade():
         # Calculando a idade.
         idade = data_atual - ano_nasc
         print(f"{nome}, sua idade atual é: {idade} anos!")
+        executar = False
 
-
-# Chamando a função.
-calcular_idade()
+    except:
+        print("O ano de nascimento deve ser escrito apenas com números inteiros")
